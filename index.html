@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elevon Data - Soluções em Nuvem e Dados</title>
+
+    <!-- Descrição para SEO -->
+    <meta
+      name="description"
+      content="A Elevon Data ajuda pequenas e médias empresas a se modernizarem através da migração para a nuvem e organização inteligente de dados."
+    />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuração do Tailwind e Estilos Personalizados -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Estilos para animações e transições suaves */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-700">
+    <!-- ===== HEADER / NAVEGAÇÃO ===== -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#inicio" class="text-2xl font-bold text-gray-800">
+          Elevon<span class="text-blue-600">Data</span>
+        </a>
+        <div class="hidden md:flex space-x-8 items-center">
+          <a
+            href="#sobre"
+            class="text-gray-600 hover:text-blue-600 transition-colors"
+            >Sobre Nós</a
+          >
+          <a
+            href="#processo"
+            class="text-gray-600 hover:text-blue-600 transition-colors"
+            >Nosso Processo</a
+          >
+          <a
+            href="#case"
+            class="text-gray-600 hover:text-blue-600 transition-colors"
+            >Case de Sucesso</a
+          >
+          <a
+            href="#faq"
+            class="text-gray-600 hover:text-blue-600 transition-colors"
+            >FAQ</a
+          >
+          <a
+            href="#contato"
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all shadow"
+            >Fale Conosco</a
+          >
+        </div>
+        <button id="mobile-menu-button" class="md:hidden">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </nav>
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+        <a href="#sobre" class="block py-2 text-gray-600 hover:text-blue-600"
+          >Sobre Nós</a
+        >
+        <a href="#processo" class="block py-2 text-gray-600 hover:text-blue-600"
+          >Nosso Processo</a
+        >
+        <a href="#case" class="block py-2 text-gray-600 hover:text-blue-600"
+          >Case de Sucesso</a
+        >
+        <a href="#faq" class="block py-2 text-gray-600 hover:text-blue-600"
+          >FAQ</a
+        >
+        <a
+          href="#contato"
+          class="block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-700"
+          >Fale Conosco</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== SEÇÃO HERO ===== -->
+      <section id="inicio" class="relative bg-gray-900 text-white">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div
+          class="container mx-auto px-6 py-24 md:py-32 lg:py-40 relative z-10 text-center"
+        >
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4"
+          >
+            Transforme seus dados em
+            <span class="text-blue-400">decisões inteligentes.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Ajudamos pequenas e médias empresas a se modernizarem, migrando sua
+            infraestrutura para a nuvem e organizando seus dados de forma
+            estratégica.
+          </p>
+          <a
+            href="#contato"
+            class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all shadow-lg transform hover:scale-105"
+          >
+            Comece a sua jornada
+          </a>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO SOBRE NÓS (MISSÃO E VISÃO) ===== -->
+      <section id="sobre" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+              Conectando Tecnologia a Resultados
+            </h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+              Nascemos para ser a parceira de tecnologia que realmente entende o
+              seu negócio.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+              <img
+                src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Inovação"
+                alt="Equipe colaborando em um projeto de dados"
+                class="rounded-xl shadow-2xl"
+              />
+            </div>
+            <div class="space-y-8 fade-in" style="transition-delay: 200ms">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg">
+                  <i data-lucide="rocket" class="w-8 h-8 text-blue-600"></i>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold mb-2">Nossa Missão</h3>
+                  <p class="text-gray-600">
+                    Ajudar nossos clientes a usar todo o seu potencial, movendo
+                    sua tecnologia para a nuvem de forma segura e transformando
+                    seus dados em decisões inteligentes.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg">
+                  <i data-lucide="eye" class="w-8 h-8 text-blue-600"></i>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold mb-2">Nossa Visão</h3>
+                  <p class="text-gray-600">
+                    Ser a parceira de tecnologia mais reconhecida no Brasil para
+                    PMEs, entregando projetos de nuvem e dados que realmente
+                    impactam o negócio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO NOSSOS PRINCÍPIOS ===== -->
+      <section id="principios" class="py-20 md:py-28 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+              Nossos Princípios de Trabalho
+            </h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+              A base para construir soluções robustas, seguras e eficientes.
+            </p>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Princípio 1 -->
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in"
+            >
+              <div
+                class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+              >
+                <i data-lucide="cloud" class="w-8 h-8"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Tudo na Nuvem</h3>
+              <p class="text-gray-600">
+                A nuvem é sempre nossa primeira opção, garantindo escalabilidade
+                e flexibilidade.
+              </p>
+            </div>
+            <!-- Princípio 2 -->
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in"
+              style="transition-delay: 150ms"
+            >
+              <div
+                class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+              >
+                <i data-lucide="code" class="w-8 h-8"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Tudo como Código</h3>
+              <p class="text-gray-600">
+                Gerenciamos infraestrutura e dados com código para automação,
+                segurança e repetibilidade.
+              </p>
+            </div>
+            <!-- Princípio 3 -->
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in"
+              style="transition-delay: 300ms"
+            >
+              <div
+                class="bg-red-100 text-red-600 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+              >
+                <i data-lucide="shield" class="w-8 h-8"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">
+                Segurança em Primeiro Lugar
+              </h3>
+              <p class="text-gray-600">
+                Integramos segurança e conformidade desde o início de cada
+                projeto, não como um adendo.
+              </p>
+            </div>
+            <!-- Princípio 4 -->
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in"
+              style="transition-delay: 450ms"
+            >
+              <div
+                class="bg-yellow-100 text-yellow-600 w-16 h-16 rounded-full flex items-center justify-center mb-6"
+              >
+                <i data-lucide="database" class="w-8 h-8"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Dados são um Ativo</h3>
+              <p class="text-gray-600">
+                Tratamos os dados do cliente como um ativo valioso que precisa
+                gerar resultados claros para o negócio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO NOSSO PROCESSO ===== -->
+      <section id="processo" class="py-20 md:py-28">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-20 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+              Nosso Processo de 5 Passos
+            </h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+              Uma jornada estruturada para garantir a transformação digital do
+              seu negócio com sucesso.
+            </p>
+          </div>
+          <!-- Linha do tempo -->
+          <div class="relative wrap overflow-hidden p-10 h-full">
+            <div
+              class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
+              style="left: 50%"
+            ></div>
+            <!-- Item 1 -->
+            <div
+              class="mb-8 flex justify-between items-center w-full right-timeline"
+            >
+              <div class="order-1 w-5/12"></div>
+              <div
+                class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full"
+              >
+                <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+              </div>
+              <div
+                class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 fade-in"
+              >
+                <h3 class="font-bold text-gray-800 text-xl">
+                  Entender o Cliente (Diagnóstico)
+                </h3>
+                <p
+                  class="text-sm leading-snug tracking-wide text-gray-600 text-opacity-100"
+                >
+                  Fazemos um diagnóstico completo para entender sua
+                  infraestrutura e dados, resolvendo o problema certo.
+                </p>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div
+              class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
+            >
+              <div class="order-1 w-5/12"></div>
+              <div
+                class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full"
+              >
+                <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
+              </div>
+              <div
+                class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 fade-in"
+              >
+                <h3 class="font-bold text-gray-800 text-xl">
+                  Planejar a Solução
+                </h3>
+                <p
+                  class="text-sm leading-snug tracking-wide text-gray-600 text-opacity-100"
+                >
+                  Desenhamos a solução completa, garantindo que a base na nuvem
+                  e os dados funcionem bem juntos.
+                </p>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div
+              class="mb-8 flex justify-between items-center w-full right-timeline"
+            >
+              <div class="order-1 w-5/12"></div>
+              <div
+                class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full"
+              >
+                <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
+              </div>
+              <div
+                class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 fade-in"
+              >
+                <h3 class="font-bold text-gray-800 text-xl">
+                  Migrar e Modernizar
+                </h3>
+                <p
+                  class="text-sm leading-snug tracking-wide text-gray-600 text-opacity-100"
+                >
+                  Executamos o plano, movendo seus sistemas e dados para a nuvem
+                  de forma segura e eficiente.
+                </p>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div
+              class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
+            >
+              <div class="order-1 w-5/12"></div>
+              <div
+                class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full"
+              >
+                <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
+              </div>
+              <div
+                class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 fade-in"
+              >
+                <h3 class="font-bold text-gray-800 text-xl">
+                  Implementar a Governança
+                </h3>
+                <p
+                  class="text-sm leading-snug tracking-wide text-gray-600 text-opacity-100"
+                >
+                  Aplicamos regras de segurança, controle de custos e uso de
+                  dados, dando a você controle e visibilidade.
+                </p>
+              </div>
+            </div>
+            <!-- Item 5 -->
+            <div
+              class="mb-8 flex justify-between items-center w-full right-timeline"
+            >
+              <div class="order-1 w-5/12"></div>
+              <div
+                class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full"
+              >
+                <h1 class="mx-auto font-semibold text-lg text-white">5</h1>
+              </div>
+              <div
+                class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 fade-in"
+              >
+                <h3 class="font-bold text-gray-800 text-xl">
+                  Gerar Valor e Dar Suporte
+                </h3>
+                <p
+                  class="text-sm leading-snug tracking-wide text-gray-600 text-opacity-100"
+                >
+                  Cuidamos do ambiente e ajudamos a extrair insights valiosos
+                  com dashboards e análises contínuas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO CASE DE SUCESSO ===== -->
+      <section id="case" class="py-20 md:py-28 bg-blue-600 text-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16 fade-in">
+            <span class="text-blue-200 font-semibold tracking-wider"
+              >CASE DE SUCESSO</span
+            >
+            <h2 class="text-3xl md:text-4xl font-bold mt-2">
+              Distribuidora Rápida Ltda.
+            </h2>
+          </div>
+          <div
+            class="bg-white/10 backdrop-blur-sm p-8 md:p-12 rounded-2xl grid md:grid-cols-3 gap-8 items-center fade-in"
+          >
+            <div class="md:col-span-2">
+              <h3 class="text-2xl font-bold mb-4">O Desafio</h3>
+              <p class="text-blue-100 mb-6">
+                Servidores antigos e lentos, com dados de entrega espalhados em
+                múltiplas planilhas, dificultando a tomada de decisões e a
+                otimização de rotas.
+              </p>
+              <h3 class="text-2xl font-bold mb-4">A Solução Elevon Data</h3>
+              <p class="text-blue-100">
+                Após um diagnóstico completo, migramos o sistema para a nuvem
+                (AWS) e centralizamos todos os dados de fretes e rotas em um
+                Data Lake moderno, com um painel de controle em tempo real.
+              </p>
+            </div>
+            <div class="text-center space-y-6">
+              <div>
+                <p class="text-5xl font-extrabold text-blue-300">40%</p>
+                <p class="font-semibold">Mais Rápido</p>
+              </div>
+              <div>
+                <p class="text-5xl font-extrabold text-blue-300">15%</p>
+                <p class="font-semibold">Otimização de Rotas</p>
+              </div>
+              <div>
+                <i
+                  data-lucide="trending-up"
+                  class="w-16 h-16 mx-auto text-blue-300"
+                ></i>
+                <p class="font-semibold mt-2">Redução de Custos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO KPIs ===== -->
+      <section id="kpis" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+              Como Medimos Nosso Sucesso
+            </h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+              Focamos em indicadores (KPIs) que demonstram o valor real gerado
+              para o seu negócio.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- KPI Card -->
+            <div class="border border-gray-200 p-6 rounded-lg fade-in">
+              <h3 class="font-bold text-lg mb-2">
+                Retorno do Investimento (ROI)
+              </h3>
+              <p class="text-gray-600">
+                Mostra o benefício financeiro total do nosso trabalho.
+              </p>
+            </div>
+            <!-- KPI Card -->
+            <div class="border border-gray-200 p-6 rounded-lg fade-in">
+              <h3 class="font-bold text-lg mb-2">
+                Tempo até o Primeiro Insight
+              </h3>
+              <p class="text-gray-600">
+                Mede quão rápido você obtém informações úteis dos novos
+                dashboards.
+              </p>
+            </div>
+            <!-- KPI Card -->
+            <div class="border border-gray-200 p-6 rounded-lg fade-in">
+              <h3 class="font-bold text-lg mb-2">
+                Disponibilidade e Performance (SLA)
+              </h3>
+              <p class="text-gray-600">
+                Garante que seu ambiente estará sempre no ar e funcionando bem.
+              </p>
+            </div>
+            <!-- KPI Card -->
+            <div class="border border-gray-200 p-6 rounded-lg fade-in">
+              <h3 class="font-bold text-lg mb-2">
+                Índice de Confiança nos Dados
+              </h3>
+              <p class="text-gray-600">
+                Mede a qualidade dos dados que você usa para tomar decisões.
+              </p>
+            </div>
+            <!-- KPI Card -->
+            <div class="border border-gray-200 p-6 rounded-lg fade-in">
+              <h3 class="font-bold text-lg mb-2">
+                Nota de Conformidade e Segurança
+              </h3>
+              <p class="text-gray-600">
+                Um placar que mostra o quão seguro e dentro das regras (LGPD)
+                está seu ambiente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO FAQ ===== -->
+      <section id="faq" class="py-20 md:py-28 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+              Perguntas Frequentes
+            </h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+              Respostas diretas para as suas dúvidas mais importantes sobre
+              governança e tecnologia.
+            </p>
+          </div>
+          <div class="space-y-4 fade-in">
+            <!-- Accordion Item 1 -->
+            <div class="accordion-item bg-white rounded-lg shadow-sm">
+              <button
+                class="accordion-header w-full flex justify-between items-center text-left p-6"
+              >
+                <span class="font-semibold text-lg text-gray-800"
+                  >O que é governança de TI para vocês e como ela ajuda o
+                  negócio?</span
+                >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-6 h-6 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content">
+                <p class="p-6 pt-0 text-gray-600">
+                  Governança de TI, para nós, é o que conecta a tecnologia aos
+                  resultados. Começamos entendendo os objetivos de negócio do
+                  cliente — como reduzir custos ou ser mais eficiente — e usamos
+                  isso para construir uma solução de nuvem e dados que atinja
+                  exatamente esses objetivos.
+                </p>
+              </div>
+            </div>
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item bg-white rounded-lg shadow-sm">
+              <button
+                class="accordion-header w-full flex justify-between items-center text-left p-6"
+              >
+                <span class="font-semibold text-lg text-gray-800"
+                  >Como vocês medem o desempenho da tecnologia?</span
+                >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-6 h-6 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content">
+                <p class="p-6 pt-0 text-gray-600">
+                  Nós medimos o que importa: o retorno financeiro que o cliente
+                  teve (ROI), a estabilidade dos sistemas (Disponibilidade) e a
+                  velocidade com que geramos insights a partir dos dados (Tempo
+                  até o Insight).
+                </p>
+              </div>
+            </div>
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item bg-white rounded-lg shadow-sm">
+              <button
+                class="accordion-header w-full flex justify-between items-center text-left p-6"
+              >
+                <span class="font-semibold text-lg text-gray-800"
+                  >Como vocês usam Agile e DevOps com a governança?</span
+                >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-6 h-6 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content">
+                <p class="p-6 pt-0 text-gray-600">
+                  Nossa governança já nasce ágil. Usamos DevOps para tratar a
+                  infraestrutura e os dados como código. Isso quer dizer que as
+                  regras de segurança e conformidade são automáticas e aplicadas
+                  em cada etapa, tornando a governança um acelerador, não um
+                  freio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO CONTATO ===== -->
+      <section id="contato" class="py-20 md:py-28 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold fade-in">
+            Vamos construir o futuro do seu negócio, juntos.
+          </h2>
+          <p
+            class="text-lg text-gray-300 mt-4 mb-8 max-w-2xl mx-auto fade-in"
+            style="transition-delay: 150ms"
+          >
+            Pronto para modernizar sua empresa? Entre em contato e agende um
+            diagnóstico gratuito.
+          </p>
+          <div class="fade-in" style="transition-delay: 300ms">
+            <a
+              href="mailto:contato@elevondata.com.br"
+              class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all shadow-lg transform hover:scale-105 inline-block"
+            >
+              Enviar um E-mail
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-800 text-gray-400">
+      <div class="container mx-auto px-6 py-8 text-center">
+        <p>&copy; 2025 Elevon Data. Todos os direitos reservados.</p>
+        <p class="text-sm mt-2">
+          Um projeto acadêmico de Gestão de Sistemas da Informação.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Inicializa os ícones do Lucide
+      lucide.createIcons();
+
+      // Lógica do Menu Mobile
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Fecha o menu mobile ao clicar em um link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Lógica do Accordion (FAQ)
+      const accordionItems = document.querySelectorAll(".accordion-item");
+      accordionItems.forEach((item) => {
+        const header = item.querySelector(".accordion-header");
+        const content = item.querySelector(".accordion-content");
+        const icon = header.querySelector("i");
+
+        header.addEventListener("click", () => {
+          // Fecha todos os outros itens
+          accordionItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              const otherContent =
+                otherItem.querySelector(".accordion-content");
+              const otherIcon = otherItem.querySelector(".accordion-header i");
+              otherContent.style.maxHeight = "0px";
+              otherIcon.style.transform = "rotate(0deg)";
+            }
+          });
+
+          // Abre ou fecha o item clicado
+          const isOpen =
+            content.style.maxHeight && content.style.maxHeight !== "0px";
+          if (isOpen) {
+            content.style.maxHeight = "0px";
+            icon.style.transform = "rotate(0deg)";
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.style.transform = "rotate(180deg)";
+          }
+        });
+      });
+
+      // Lógica para animação de Fade-in ao rolar a página
+      const faders = document.querySelectorAll(".fade-in");
+      const appearOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const appearOnScroll = new IntersectionObserver(function (
+        entries,
+        appearOnScroll
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add("fade-in-visible");
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      },
+      appearOptions);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
+    </script>
+  </body>
+</html>
