@@ -33,6 +33,9 @@
             fontFamily: {
               sans: ["Inter", "sans-serif"],
             },
+            aspectRatio: {
+              video: "16 / 9",
+            },
           },
         },
       };
@@ -121,7 +124,9 @@
     <main>
       <!-- ===== SEÇÃO HERO ===== -->
       <section id="inicio" class="relative bg-gray-900 text-white">
+        <!-- Overlay escuro -->
         <div class="absolute inset-0 bg-black opacity-50"></div>
+        <!-- Conteúdo -->
         <div
           class="container mx-auto px-6 py-24 md:py-32 lg:py-40 relative z-10 text-center"
         >
@@ -158,13 +163,26 @@
             </p>
           </div>
           <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Coluna do Vídeo -->
             <div class="fade-in">
-              <img
-                src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Inovação"
-                alt="Equipe colaborando em um projeto de dados"
-                class="rounded-xl shadow-2xl"
-              />
+              <!-- Container responsivo para o vídeo -->
+              <div
+                class="relative w-full overflow-hidden rounded-xl shadow-2xl"
+                style="padding-top: 56.25%"
+              >
+                <!-- 56.25% é 9/16, para aspect ratio 16:9 -->
+                <iframe
+                  class="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/jRzNkkUiiVk?si=5Gjety9cA6LdH2uX"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
+            <!-- Coluna de Missão e Visão -->
             <div class="space-y-8 fade-in" style="transition-delay: 200ms">
               <div class="flex items-start space-x-4">
                 <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg">
